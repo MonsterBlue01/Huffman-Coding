@@ -30,7 +30,22 @@ void push(LLNode* node, int val) {
     new->next = tmp;
 }
 
-// pop
+void pop(LLNode* node) {
+    LLNode* tmp = node;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+
+    if ((node->prev == NULL) && (node->next == NULL)) {
+        free(node);
+        return;
+    }
+
+    if (tmp) {
+        tmp->next->prev = NULL;
+        free(tmp);
+    }
+}
 
 // enqueue
 
@@ -41,5 +56,7 @@ void push(LLNode* node, int val) {
 int main() {
     LLNode* new = createNew(5);
     push(new, 4);
-    printf("%d\n", new->prev->next->data);
+    pop(new);
+    pop(new);
+    // printf("%d\n", new->prev->next->data);
 }
