@@ -11,10 +11,6 @@ LLNode* createNew(int val) {
     return new;
 }
 
-// deleteNode
-
-// insertNode
-
 // clean
 
 // getLength
@@ -23,7 +19,16 @@ LLNode* createNew(int val) {
 
 // Find Last Element
 
-// push
+void push(LLNode* node, int val) {
+    LLNode* new = (LLNode *)malloc(sizeof(LLNode));
+    LLNode* tmp = node;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+    new->data = val;
+    tmp->prev = new;
+    new->next = tmp;
+}
 
 // pop
 
@@ -35,5 +40,6 @@ LLNode* createNew(int val) {
 
 int main() {
     LLNode* new = createNew(5);
-    printf("%d\n", new->data);
+    push(new, 4);
+    printf("%d\n", new->prev->next->data);
 }

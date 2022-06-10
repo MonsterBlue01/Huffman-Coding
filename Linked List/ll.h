@@ -5,3 +5,5 @@ struct LLNode {
 };
 
 typedef struct LLNode LLNode;
+
+LLNode* createNew(int val);
