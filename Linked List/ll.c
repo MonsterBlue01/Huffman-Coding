@@ -26,9 +26,39 @@ int getLength(LLNode* node) {
     return num + 1;
 }
 
-// Find First Element
+// Tips: It counts from 0, but not 1.
+int findFirst(int element, LLNode* node) {
+    int index = 0;
+    LLNode* tmp = node;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+    while (tmp != NULL) {
+        if (tmp->data == element) {
+            return index;
+        }
+        index++;
+        tmp = tmp->next;
+    }
+    return -1;
+}
 
-// Find Last Element
+int findLast(int element, LLNode* node) {
+    int index = 0;
+    LLNode* tmp = node;
+    while (tmp->next != NULL) {
+        tmp = tmp->next;
+        printf("%d\n", tmp->data);
+    }
+    while (tmp != NULL) {
+        if (tmp->data == element) {
+            return getLength(node) - index - 1;
+        }
+        index++;
+        tmp = tmp->prev;
+    }
+    return -1;
+}
 
 void push(LLNode* node, int val) {
     LLNode* new = (LLNode *)malloc(sizeof(LLNode));
@@ -82,8 +112,13 @@ int main() {
     LLNode* new = createNew(5);
     push(new, 4);
     push(new, 3);
+    // push(new, 6);
+    push(new, 3);
     push(new, 2);
+    push(new, 1);
     // printf("%d\n", getLength(new));
+    // printf("%d\n", findFirst(3, new));
+    // printf("%d\n", findLast(3, new));
     clean(new);
     // pop(new);
     // pop(new);
