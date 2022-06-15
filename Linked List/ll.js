@@ -102,11 +102,59 @@ void clean(LLNode* node) {
     }
 }
 
-// enqueue
+void enqueue(LLNode* node, int val) {
+    LLNode* tmp = node;
+    LLNode* new = (LLNode *)malloc(sizeof(LLNode));
+    while (tmp->next != NULL) {
+        tmp = tmp->next;
+    }
+    new->data = val;
+    tmp->next = new;
+    new->prev = tmp;
+    new->next = NULL;
+}
 
-// dequeue
+void dequeue(LLNode* node) {
+    LLNode* tmp = node;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+    LLNode* head = tmp;
+    tmp->next->prev = NULL;
+    free(head);
+}
+
+void to_string(LLNode* node) {
+    LLNode* tmp = node;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+    while (tmp->next != NULL) {
+        printf("%d -> ", tmp->data);
+        tmp = tmp->next;
+    }
+    printf("%d\n", tmp->data);
+}
 
 // Insert Element At Index
+
+// Merge
+
+// RemoveFirst
+
+// RemoveLast
+
+// RemoveIndex
+
+// Contains
+
+// Get (Get an element at a specified position)
+
+// GetFirst
+
+// GetLast
+
+// Clone
 
 int main() {
     LLNode* new = createNew(5);
@@ -119,6 +167,10 @@ int main() {
     // printf("%d\n", getLength(new));
     // printf("%d\n", findFirst(3, new));
     // printf("%d\n", findLast(3, new));
+    // enqueue(new, 3);
+    dequeue(new);
+    enqueue(new, 6);
+    to_string(new);
     clean(new);
     // pop(new);
     // pop(new);
