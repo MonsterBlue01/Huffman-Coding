@@ -136,6 +136,41 @@ void to_string(LLNode* node) {
     printf("%d\n", tmp->data);
 }
 
+void insertAtIndex(LLNode* ll, int index, int val) {
+    if ((index > getLength(ll) - 1) || (index < 0)) {
+        printf("The corresponding index does not exist.\n");
+        return;
+    } else if (index == getLength(ll) - 1) {
+        enqueue(ll, val);
+        return;
+    }
+    LLNode* tmp = ll;
+    LLNode* new = (LLNode *)malloc(sizeof(LLNode));
+    new->data = val;
+    while (tmp->prev != NULL) {
+        tmp = tmp->prev;
+    }
+    int realI = 0;
+    if (index == 0) {
+        tmp->next->prev = new;
+        new->prev = tmp;
+        new->next = tmp->next;
+        tmp->next = new;
+        return;
+    }
+    while (realI != index) {
+        tmp = tmp->next;
+        if (realI == index - 1) {
+            printf("%d\n", tmp->data);
+            tmp->next->prev = new;
+            new->prev = tmp;
+            new->next = tmp->next;
+            tmp->next = new;
+        }
+        realI++;
+    }
+}
+
 // Insert Element At Index
 
 // Merge
@@ -170,6 +205,7 @@ int main() {
     // enqueue(new, 3);
     dequeue(new);
     enqueue(new, 6);
+    insertAtIndex(new, -1, 4);
     to_string(new);
     clean(new);
     // pop(new);
