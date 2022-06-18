@@ -171,9 +171,23 @@ void insertAtIndex(LLNode* ll, int index, int val) {
     }
 }
 
-// Insert Element At Index
-
-// Merge
+// Tips: Merge the second string of Nodes into the first string of Nodes and free all nodes in the second string.
+LLNode* merge(LLNode* one, LLNode* two) {
+    LLNode* tmp = two;
+    if (one == NULL) {
+        one = two;
+        clean(two);
+        return two;
+    }
+    for(; two->prev != NULL; two = two->prev);
+    while (two != NULL) {
+        printf("two: %d\n", two->data);
+        enqueue(one, two->data);
+        two = two->next;
+    }
+    clean(tmp);
+    return one;
+}
 
 // RemoveFirst
 
@@ -195,17 +209,18 @@ int main() {
     LLNode* new = createNew(5);
     push(new, 4);
     push(new, 3);
-    // push(new, 6);
-    push(new, 3);
     push(new, 2);
     push(new, 1);
+    LLNode* ano = createNew(8);
+    push(ano, 7);
     // printf("%d\n", getLength(new));
     // printf("%d\n", findFirst(3, new));
     // printf("%d\n", findLast(3, new));
     // enqueue(new, 3);
     dequeue(new);
     enqueue(new, 6);
-    insertAtIndex(new, -1, 4);
+    // insertAtIndex(new, -1, 4);
+    merge(new, ano);
     to_string(new);
     clean(new);
     // pop(new);
