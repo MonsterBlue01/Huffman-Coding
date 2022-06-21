@@ -213,7 +213,6 @@ void removeIndex(LLNode* ll, int index) {
     t->prev->next = t->next;
     t->next->prev = t->prev;
     free(t);
-    printf("Apple!\n");
 }
 
 // Contains
