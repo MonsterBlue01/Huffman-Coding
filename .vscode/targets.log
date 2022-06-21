@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Jun 16 13:02:21 2022
+# Make data base, printed on Tue Jun 21 12:13:44 2022
 
 # Variables
 
@@ -31,7 +31,7 @@ CURDIR := /Users/wangdongjing/Desktop/Data-Structure
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_translationsConfigFile":"/Users/wangdongjing/Library/Application Support/Code/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/tcf.json","_cacheRoot":"/Users/wangdongjing/Library/Application Support/Code/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/wangdongjing/Library/Application Support/Code/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/Users/wangdongjing/Library/Application Support/Code/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile
@@ -41,7 +41,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/vt/r7bgq4551pl8krmz5hwyqtbc0000gn/T/vscode-ipc-26434b87-266a-4142-87c5-ae412c913140.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/vt/r7bgq4551pl8krmz5hwyqtbc0000gn/T/vscode-ipc-8065c622-8c28-463e-9bc0-34efeac39f32.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -53,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.v1thknQxao/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0T0gk0Cspp/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -69,11 +69,11 @@ HOME = /Users/wangdongjing
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/wangdongjing/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/wangdongjing/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = wangdongjing
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -103,7 +103,7 @@ TMPDIR = /var/folders/vt/r7bgq4551pl8krmz5hwyqtbc0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/wangdongjing/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/wangdongjing/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -111,13 +111,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.26110712.26110718
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.26815278.26815284
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x56
+__CF_USER_TEXT_ENCODING = 0x1F5:0x19:0x34
 # environment
 COMMAND_MODE = unix2003
 # default
@@ -137,7 +137,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2187
+VSCODE_PID = 1536
 # variable set hash-table stats:
 # Load=62/1024=6%, Rehash=0, Collisions=1/83=1%
 
@@ -147,7 +147,7 @@ VSCODE_PID = 2187
 
 # Directories
 
-# . (device 16777224, inode 26249452): 7 files, no impossibilities.
+# . (device 16777225, inode 26249452): 7 files, no impossibilities.
 
 # 7 files, no impossibilities in 1 directories.
 
@@ -221,6 +221,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu Jun 16 13:02:21 2022
+# Finished Make data base on Tue Jun 21 12:13:44 2022
 
  

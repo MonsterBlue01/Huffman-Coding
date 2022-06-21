@@ -189,11 +189,32 @@ LLNode* merge(LLNode* one, LLNode* two) {
     return one;
 }
 
-// RemoveFirst
+void removeIndex(LLNode* ll, int index) {
+    if (index == 0) {
+        dequeue(ll);
+        return;
+    } else if (index == getLength(ll) - 1) {
+        LLNode* tmp = ll;
+        for (; tmp->next != NULL; tmp = tmp->next);
+        printf("%d\n", tmp->data);
+        LLNode* p = tmp->prev;
+        p->next = NULL;
+        free(tmp);
+        return;
+    }
 
-// RemoveLast
-
-// RemoveIndex
+    LLNode* t = ll;
+    for (; t->prev != NULL; t = t->prev);
+    int tmp = index;
+    while (tmp > 0) {
+        t = t->next;
+        tmp--;
+    }
+    t->prev->next = t->next;
+    t->next->prev = t->prev;
+    free(t);
+    printf("Apple!\n");
+}
 
 // Contains
 
@@ -221,6 +242,7 @@ int main() {
     enqueue(new, 6);
     // insertAtIndex(new, -1, 4);
     merge(new, ano);
+    // removeIndex(new, 3);
     to_string(new);
     clean(new);
     // pop(new);
