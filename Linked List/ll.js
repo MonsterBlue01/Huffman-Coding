@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "ll.h"
 
@@ -215,7 +216,18 @@ void removeIndex(LLNode* ll, int index) {
     free(t);
 }
 
-// Contains
+bool contains(LLNode* ll, int element) {
+    LLNode* tmp = ll;
+    for (; tmp->prev != NULL; tmp = tmp->prev);
+    printf("%d\n", tmp->data);
+    while (tmp != NULL) {
+        if (tmp->data == element) {
+            return true;
+        }
+        tmp = tmp->next;
+    }
+    return false;
+}
 
 // Get (Get an element at a specified position)
 
@@ -241,6 +253,7 @@ int main() {
     enqueue(new, 6);
     // insertAtIndex(new, -1, 4);
     merge(new, ano);
+    // printf("%d\n", contains(new, 2));
     // removeIndex(new, 3);
     to_string(new);
     clean(new);
