@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Wed Jun 22 10:44:13 2022
+
+# Make data base, printed on Thu Jun 23 12:16:54 2022
 
 # Variables
 
@@ -38,7 +41,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/vt/r7bgq4551pl8krmz5hwyqtbc0000gn/T/vscode-ipc-45c96c71-52ed-4852-9bae-f217f03f83c7.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/vt/r7bgq4551pl8krmz5hwyqtbc0000gn/T/vscode-ipc-fa76c9a6-1600-45d8-9e5c-b4af3449c7cd.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -50,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ARNhCI5BrM/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.9SfzEpJOZN/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -134,8 +137,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3035
+VSCODE_PID = 3534
 # variable set hash-table stats:
+ 
 # Load=62/1024=6%, Rehash=0, Collisions=1/83=1%
 
 # Pattern-specific Variable Values
@@ -144,7 +148,7 @@ VSCODE_PID = 3035
 
 # Directories
 
-# . (device 16777223, inode 26249452): 7 files, no impossibilities.
+# . (device 16777220, inode 26249452): 7 files, no impossibilities.
 
 # 7 files, no impossibilities in 1 directories.
 
@@ -218,8 +222,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Jun 22 10:44:13 2022
+# Finished Make data base on Thu Jun 23 12:16:54 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

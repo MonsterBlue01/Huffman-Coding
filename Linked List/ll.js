@@ -49,7 +49,6 @@ int findLast(int element, LLNode* node) {
     LLNode* tmp = node;
     while (tmp->next != NULL) {
         tmp = tmp->next;
-        printf("%d\n", tmp->data);
     }
     while (tmp != NULL) {
         if (tmp->data == element) {
@@ -96,7 +95,6 @@ void clean(LLNode* node) {
         tmp = tmp->prev;
     }
     while (tmp != NULL) {
-        // printf("%d\n", tmp->data);
         LLNode* del = tmp;
         tmp = tmp->next;
         free(del);
@@ -162,7 +160,6 @@ void insertAtIndex(LLNode* ll, int index, int val) {
     while (realI != index) {
         tmp = tmp->next;
         if (realI == index - 1) {
-            printf("%d\n", tmp->data);
             tmp->next->prev = new;
             new->prev = tmp;
             new->next = tmp->next;
@@ -182,7 +179,6 @@ LLNode* merge(LLNode* one, LLNode* two) {
     }
     for(; two->prev != NULL; two = two->prev);
     while (two != NULL) {
-        printf("two: %d\n", two->data);
         enqueue(one, two->data);
         two = two->next;
     }
@@ -197,7 +193,6 @@ void removeIndex(LLNode* ll, int index) {
     } else if (index == getLength(ll) - 1) {
         LLNode* tmp = ll;
         for (; tmp->next != NULL; tmp = tmp->next);
-        printf("%d\n", tmp->data);
         LLNode* p = tmp->prev;
         p->next = NULL;
         free(tmp);
@@ -219,7 +214,6 @@ void removeIndex(LLNode* ll, int index) {
 bool contains(LLNode* ll, int element) {
     LLNode* tmp = ll;
     for (; tmp->prev != NULL; tmp = tmp->prev);
-    printf("%d\n", tmp->data);
     while (tmp != NULL) {
         if (tmp->data == element) {
             return true;
@@ -229,7 +223,20 @@ bool contains(LLNode* ll, int element) {
     return false;
 }
 
-// Get (Get an element at a specified position)
+int get(LLNode* ll, int index) {
+    if ((index < 0) || (index > getLength(ll) - 1)) {
+        printf("The corresponding index does not exist.\n");
+        return INT32_MIN;
+    }
+    LLNode* tmp = ll;
+    for (; tmp->prev != NULL; tmp = tmp->prev);
+    int temp = index;
+    while (temp != 0) {
+        tmp = tmp->next;
+        temp--;
+    }
+    return tmp->data;
+}
 
 // GetFirst
 
@@ -253,6 +260,7 @@ int main() {
     enqueue(new, 6);
     // insertAtIndex(new, -1, 4);
     merge(new, ano);
+    // printf("%d\n", get(new, 7));
     // printf("%d\n", contains(new, 2));
     // removeIndex(new, 3);
     to_string(new);
