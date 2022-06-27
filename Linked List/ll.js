@@ -238,9 +238,17 @@ int get(LLNode* ll, int index) {
     return tmp->data;
 }
 
-// GetFirst
+int getFirst(LLNode* ll) {
+    LLNode* tmp = ll;
+    for (; tmp->prev != NULL; tmp = tmp->prev);
+    return tmp->data;
+}
 
-// GetLast
+int getLast(LLNode* ll) {
+    LLNode* tmp = ll;
+    for (; tmp->next != NULL; tmp = tmp->next);
+    return tmp->data;
+}
 
 // Clone
 
@@ -263,6 +271,8 @@ int main() {
     // printf("%d\n", get(new, 7));
     // printf("%d\n", contains(new, 2));
     // removeIndex(new, 3);
+    printf("%d\n", getFirst(new));
+    printf("%d\n", getLast(new));
     to_string(new);
     clean(new);
     // pop(new);
