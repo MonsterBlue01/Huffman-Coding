@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "ll.h"
 
@@ -250,9 +251,21 @@ int getLast(LLNode* ll) {
     return tmp->data;
 }
 
-// Clone
+// tips: Because cloning an empty linked list doesn't make any sense, I just 
+// ignored that case when writing this function (because at least one LLNode* 
+// needs to be passed in).
+LLNode* clone(LLNode* ll) {
+    LLNode* tmp = ll;
+    for (; tmp->prev != NULL; tmp = tmp->prev);
+    LLNode* new = createNew(tmp->data);
+    tmp = tmp->next;
+    for (; tmp != NULL; tmp = tmp->next) {
+        enqueue(new, tmp->data);
+    }
+    return new;
+}
 
-int main() {
+int main(void) {
     LLNode* new = createNew(5);
     push(new, 4);
     push(new, 3);
@@ -274,6 +287,8 @@ int main() {
     printf("%d\n", getFirst(new));
     printf("%d\n", getLast(new));
     to_string(new);
+    LLNode* c = clone(new);
+    to_string(c);
     clean(new);
     // pop(new);
     // pop(new);
