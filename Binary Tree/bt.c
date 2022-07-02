@@ -19,7 +19,22 @@ Node* createRoot(int num) {
 
 // printTree
 
-// insertTree
+Node* insert(int num, Node* node) {
+    if (node == NULL) {
+        Node* temp = (Node*)malloc(sizeof(Node));
+        temp->data = num;
+        temp->left = temp->right = NULL;
+        return temp;
+    }
+
+    if (num < node->data) {
+        node->left = insert(num, node->left);
+    } else if (num > node->data) {
+        node->right = insert(num, node->right);
+    }
+    
+    return node;
+}
 
 // deleteSubtree
 
@@ -29,8 +44,10 @@ Node* createRoot(int num) {
 
 // postorder
 
-int main() {
+int main(void) {
     Node* new = createRoot(2);
-    printf("Root's value: %d\n", new->data);
+    insert(8, new);
+    insert(4, new);
+    printf("NEW value: %d\n", new->right->left->data);
     return 0;
 }
