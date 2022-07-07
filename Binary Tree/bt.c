@@ -9,7 +9,13 @@ Node* createRoot(int num) {
     return new;
 }
 
-// getRoot
+Node* getRoot(Node* node) {
+    Node* tmp = node;
+    while (tmp->parent != NULL) {
+        tmp = tmp->parent;
+    }
+    return tmp;
+}
 
 // getParent
 
@@ -28,9 +34,13 @@ Node* insert(int num, Node* node) {
     }
 
     if (num < node->data) {
-        node->left = insert(num, node->left);
+        Node* tmp = insert(num, node->left);
+        node->left = tmp;
+        tmp->parent = node;
     } else if (num > node->data) {
-        node->right = insert(num, node->right);
+        Node* tmp = insert(num, node->right);
+        node->right = tmp;
+        tmp->parent = node;
     }
     
     return node;
@@ -48,6 +58,6 @@ int main(void) {
     Node* new = createRoot(2);
     insert(8, new);
     insert(4, new);
-    printf("NEW value: %d\n", new->right->left->data);
+    printf("NEW value: %d\n", new->right->parent->data);
     return 0;
 }
