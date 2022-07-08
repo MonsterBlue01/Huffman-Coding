@@ -17,7 +17,13 @@ Node* getRoot(Node* node) {
     return tmp;
 }
 
-// getParent
+Node* getParent(Node* node) {
+    if (node == NULL) {
+        printf("Invalid input node!");
+    }
+
+    return node->parent;
+}
 
 // getLeftest
 
@@ -58,6 +64,9 @@ int main(void) {
     Node* new = createRoot(2);
     insert(8, new);
     insert(4, new);
-    printf("NEW value: %d\n", new->right->parent->data);
+    Node* tmp = new->right->left;
+    Node* tmp1 = getParent(tmp);
+    printf("Test value: %d\n", tmp1->data);
+    // printf("NEW value: %d\n", new->right->parent->data);
     return 0;
 }
