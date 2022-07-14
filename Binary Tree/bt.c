@@ -40,7 +40,19 @@ Node* getLeftest(Node* node) {
     return tmp;
 }
 
-// getRightest
+Node* getRightest(Node* node) {
+    Node* tmp = node;
+    if (tmp == NULL) {
+        printf("Invalid input node!");
+        return NULL;
+    }
+
+    while (tmp->right != NULL) {
+        tmp = tmp->right;
+    }
+
+    return tmp;
+}
 
 // printTree
 
