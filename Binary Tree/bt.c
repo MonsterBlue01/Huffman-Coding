@@ -3,13 +3,13 @@
 
 #include "bt.h"
 
-Node* createRoot(int num) {
+Node* createnode(int num) {
     Node* new = (Node *)malloc(sizeof(Node));
     new->data = num;
     return new;
 }
 
-Node* getRoot(Node* node) {
+Node* getnode(Node* node) {
     Node* tmp = node;
     while (tmp->parent != NULL) {
         tmp = tmp->parent;
@@ -54,7 +54,25 @@ Node* getRightest(Node* node) {
     return tmp;
 }
 
-// printTree
+void helpF(Node* node, int n) {
+    if (node == NULL) {
+        return;
+    }
+
+    n += 10;
+    helpF(node->right, n);
+    printf("\n");
+    for (int i = 10; i < n; i++) {
+        printf(" ");
+    }
+    printf("%d\n", node->data);
+    helpF(node->left, n);
+}
+
+
+void printTree(Node* node) {
+    helpF(node, 0);
+}
 
 Node* insert(int num, Node* node) {
     if (node == NULL) {
@@ -86,7 +104,7 @@ Node* insert(int num, Node* node) {
 // postorder
 
 int main(void) {
-    Node* new = createRoot(2);
+    Node* new = createnode(2);
     insert(8, new);
     insert(4, new);
     // Node* tmp = new->right->left;
@@ -95,5 +113,6 @@ int main(void) {
     // printf("NEW value: %d\n", new->right->parent->data);
     Node* tmp2 = getLeftest(new->right);
     printf("Test value: %d\n", tmp2->data);
+    printTree(new);
     return 0;
 }
