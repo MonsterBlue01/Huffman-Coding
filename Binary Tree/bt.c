@@ -97,14 +97,28 @@ Node* insert(int num, Node* node) {
 
 void deleteSubtree(Node* node) {
     if (node != NULL) {
-        deleteSubtree(node->left);
-        deleteSubtree(node->right);
-        free(node);
-        node = NULL;
+        node->left = NULL;
+        node->right = NULL;
+    }
+
+    if (node->parent != NULL) {
+        if (node->data < node->parent->data) {
+            node->parent->left = NULL;
+        } else if (node->data > node->parent->data) {
+            node->parent->right = NULL;
+        }
     }
 }
 
-// preorder
+void preorder(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+
+    printf("%d ", node->data);
+    preorder(node->left);
+    preorder(node->right);
+}
 
 // inorder
 
@@ -126,8 +140,9 @@ int main(void) {
     // printf("NEW value: %d\n", new->right->parent->data);
     // Node* tmp2 = getLeftest(new->right);
     // printf("Test value: %d\n", tmp2->data);
-    Node* tmp3 = new->left;
-    deleteSubtree(tmp3);
+    // Node* tmp3 = new->left;
+    // deleteSubtree(tmp3);
+    preorder(new);
     printTree(new);
     return 0;
 }
