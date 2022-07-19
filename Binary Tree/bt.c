@@ -95,7 +95,14 @@ Node* insert(int num, Node* node) {
     return node;
 }
 
-// deleteSubtree
+void deleteSubtree(Node* node) {
+    if (node != NULL) {
+        deleteSubtree(node->left);
+        deleteSubtree(node->right);
+        free(node);
+        node = NULL;
+    }
+}
 
 // preorder
 
@@ -103,16 +110,24 @@ Node* insert(int num, Node* node) {
 
 // postorder
 
+// deleteTree
+
 int main(void) {
-    Node* new = createnode(2);
-    insert(8, new);
-    insert(4, new);
+    Node* new = createnode(4);
+    insert(2, new);
+    insert(6, new);
+    insert(1, new);
+    insert(3, new);
+    insert(5, new);
+    insert(7, new);
     // Node* tmp = new->right->left;
     // Node* tmp1 = getParent(tmp);
     // printf("Test value: %d\n", tmp1->data);
     // printf("NEW value: %d\n", new->right->parent->data);
-    Node* tmp2 = getLeftest(new->right);
-    printf("Test value: %d\n", tmp2->data);
+    // Node* tmp2 = getLeftest(new->right);
+    // printf("Test value: %d\n", tmp2->data);
+    Node* tmp3 = new->left;
+    deleteSubtree(tmp3);
     printTree(new);
     return 0;
 }

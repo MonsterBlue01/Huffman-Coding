@@ -10,13 +10,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Jul 15 12:51:46 2022
+# Make data base, printed on Mon Jul 18 19:24:00 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
 ?F = $(notdir $?)
 # automatic
@@ -46,7 +45,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.wbyEhU1mKf/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cwRn7hOFDZ/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -130,7 +129,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2525
+VSCODE_PID = 1451
 # variable set hash-table stats:
 # Load=58/1024=6%, Rehash=0, Collisions=1/79=1%
 
@@ -140,7 +139,7 @@ VSCODE_PID = 2525
 
 # Directories
 
-# . (device 16777220, inode 27585172): 9 files, no impossibilities.
+# . (device 16777221, inode 27585172): 9 files, no impossibilities.
 
 # 9 files, no impossibilities in 1 directories.
 
@@ -214,6 +213,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Jul 15 12:51:46 2022
+# Finished Make data base on Mon Jul 18 19:24:00 2022
 
  
