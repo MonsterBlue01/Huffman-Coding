@@ -120,9 +120,25 @@ void preorder(Node* node) {
     preorder(node->right);
 }
 
-// inorder
+void inorder(Node* node) {
+    if (node == NULL) {
+        return;
+    }
 
-// postorder
+    inorder(node->left);
+    printf("%d ", node->data);
+    inorder(node->right);
+}
+
+void postorder(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+
+    postorder(node->left);
+    postorder(node->right);
+    printf("%d ", node->data);
+}
 
 // deleteTree
 
