@@ -56,6 +56,7 @@ Node* getRightest(Node* node) {
 
 void helpF(Node* node, int n) {
     if (node == NULL) {
+        printf("NO");
         return;
     }
 
@@ -140,7 +141,16 @@ void postorder(Node* node) {
     printf("%d ", node->data);
 }
 
-// deleteTree
+// tips: Put the root node in
+void deleteTree(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+
+    node->data = 0;
+    node->left = NULL;
+    node->right = NULL;
+}
 
 int main(void) {
     Node* new = createnode(4);
@@ -158,7 +168,12 @@ int main(void) {
     // printf("Test value: %d\n", tmp2->data);
     // Node* tmp3 = new->left;
     // deleteSubtree(tmp3);
-    preorder(new);
+    // preorder(new);
+    // printf("\n");
+    // inorder(new);
+    // printf("\n");
+    // postorder(new);
+    deleteTree(new);
     printTree(new);
     return 0;
 }
