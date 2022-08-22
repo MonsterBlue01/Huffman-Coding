@@ -1,21 +1,7 @@
-typedef struct list {
-    int key;                            // key
-    char* value;                        // value
-    struct list* next;                  // conflict list
-} list;
+#include "ll.h"
 
-typedef struct hashtable {
-    list* table;
-} hashtable;
-
-unsigned long hash(unsigned char *str);
-
-add(int key, char* value);
-
-get(int key);
-
-remove(int key);
-
-getSize();
-
-isEmpty();
+typedef struct entry {
+    ll* linkedlist;
+    struct entry* down;
+    struct entry* up;
+} entry;
