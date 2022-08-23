@@ -1,5 +1,7 @@
 typedef struct ll {
     struct ll *prev;
     struct ll *next;
-    void* content;
+    char* content;
 } ll;
+
+ll* push(ll* li, char* word);

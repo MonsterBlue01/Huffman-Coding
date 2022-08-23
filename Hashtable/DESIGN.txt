@@ -43,7 +43,13 @@
 
 This hash table can hold up to two hundred non-conflicting elements. An external array (imported from other files) and a newly created linked list in the hash table file (two linked lists in total) should be able to better solve the data structure problem.
 
-\section{常用环境}
+\section{Programming Journal}
+    \begin{itemize}
+        \item 08/23/2022 \\
+            To deal with possible collisions in the hash table, an external linked list needs to be rewritten. A segmentation fault was encountered during . Since vscode on MacBook Air is not compatible with GDB and LLDB, it took a lot of time to figure this out.
+        \item This is the second item
+        \item This is the third item
+    \end{itemize}
 \begin{yd}{这是一个约定}{}
               
 约定的内容.
