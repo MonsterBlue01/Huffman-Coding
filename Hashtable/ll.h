@@ -5,3 +5,5 @@ typedef struct ll {
 } ll;
 
 ll* push(ll* li, char* word);
+
+char* pop(ll* li);

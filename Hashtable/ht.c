@@ -7,5 +7,10 @@ int main() {
     ll* new = NULL;
     new = push(new, "apple");
     new = push(new, "bear");
-    printf("%s\n", new->next->content);
+    new = push(new, "cat");
+    pop(new);
+    pop(new);
+    pop(new);
 }
+
+// Check memory leak
