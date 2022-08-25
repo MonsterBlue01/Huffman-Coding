@@ -49,7 +49,8 @@ This hash table can hold up to two hundred non-conflicting elements. An external
             To deal with possible collisions in the hash table, an external linked list needs to be rewritten. A segmentation fault was encountered during . Since vscode on MacBook Air is not compatible with GDB and LLDB, it took a lot of time to figure this out.
         \item 08/24/2022 \\
             The pop function of the linked list (which may actually be a stack based on a linked list) has been completed. However, the problem of memory leak still needs to be confirmed (Mac system cannot install Valgrind).
-        \item This is the third item
+        \item 08/25/2022 \\
+            In order to complete the hash table, the elements contained in the row and column elements should have two indexes (corresponding to the horizontal and vertical). But this also means that push and pop may need to be redone.
     \end{itemize}
 \begin{yd}{这是一个约定}{}
               
