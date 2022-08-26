@@ -3,14 +3,27 @@
 
 #include "ht.h"
 
-int main() {
-    ll* new = NULL;
-    new = push(new, "apple");
-    new = push(new, "bear");
-    new = push(new, "cat");
-    pop(new);
-    pop(new);
-    pop(new);
+entry* pushEntry(entry* e) {
+    if (e == NULL) {
+        e = (entry *)malloc(sizeof(entry));
+        e->linkedlist = (ll *)malloc(sizeof(ll));
+        e->index = 0;
+    } else {
+        entry* tmp = e;
+        while (tmp->down != NULL) {
+            tmp = tmp->down;
+        }
+        tmp->down = (entry *)malloc(sizeof(entry));
+        tmp->down->linkedlist = (ll *)malloc(sizeof(ll));
+        tmp->down->index = tmp->index + 1;
+    }
+    return e;
 }
 
-// Check memory leak
+int main() {
+    entry* e = NULL;
+    e = pushEntry(e);
+    e = pushEntry(e);
+    e = pushEntry(e);
+    printf("%d\n", e->down->down->index);
+}

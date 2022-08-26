@@ -6,3 +6,5 @@ typedef struct entry {
     struct entry* up;
     int index;
 } entry;
+
+entry* pushEntry(entry* e);
