@@ -3,27 +3,32 @@
 
 #include "ht.h"
 
-entry* pushEntry(entry* e) {
-    if (e == NULL) {
-        e = (entry *)malloc(sizeof(entry));
-        e->linkedlist = (ll *)malloc(sizeof(ll));
-        e->index = 0;
-    } else {
-        entry* tmp = e;
+entry* initialize() {
+    int index = 0;
+    entry* e = (entry *)malloc(sizeof(entry));
+    e->index = index++;
+    entry* tmp = e;
+    while (index < 200) {
         while (tmp->down != NULL) {
             tmp = tmp->down;
         }
         tmp->down = (entry *)malloc(sizeof(entry));
-        tmp->down->linkedlist = (ll *)malloc(sizeof(ll));
-        tmp->down->index = tmp->index + 1;
+        tmp->down->up = tmp;
+        tmp->down->index = index++;
+        printf("Index: %d\n", index);
     }
     return e;
 }
 
 int main() {
-    entry* e = NULL;
-    e = pushEntry(e);
-    e = pushEntry(e);
-    e = pushEntry(e);
-    printf("%d\n", e->down->down->index);
+    entry* e = initialize();
+    entry* tmp = e;
+    while (tmp->down != NULL) {
+        printf("Index down: %d\n", tmp->index);
+        tmp = tmp->down;
+    }
+    while (tmp->up != NULL) {
+        printf("Index up: %d\n", tmp->index);
+        tmp = tmp->up;
+    }
 }

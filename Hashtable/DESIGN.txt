@@ -53,6 +53,8 @@ This hash table can hold up to two hundred non-conflicting elements. An external
             In order to complete the hash table, the elements contained in the row and column elements should have two indexes (corresponding to the horizontal and vertical). But this also means that push and pop may need to be redone.
         \item 08/26/2022 \\
             Now entry and built-in linked lists have been added with "indexed" fields. But since the capacity of non-repeated elements is 200 in design, the push and pop functions of entry seem to be redundant. In the next modification, you need to pay attention to changing the push and pop functiong of entry to initialization and clear.
+        \item 08/29/2022 \\
+            The initialization function of the internal linked list of the hash table has been created and passed the preliminary test (traversing from front to back and from back to front). The next thing to do is to complete the clear function and try to clear all memory leaks.
     \end{itemize}
 \begin{yd}{这是一个约定}{}
               
@@ -66,12 +68,6 @@ This hash table can hold up to two hundred non-conflicting elements. An external
 约定的内容.
 \end{yd}
 \end{lstlisting}
-
-\begin{zs}
-        
-这是一个注释
-    
-\end{zs}
     
 \begin{xt}
         
