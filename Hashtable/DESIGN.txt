@@ -55,10 +55,11 @@ This hash table can hold up to two hundred non-conflicting elements. An external
             Now entry and built-in linked lists have been added with "indexed" fields. But since the capacity of non-repeated elements is 200 in design, the push and pop functions of entry seem to be redundant. In the next modification, you need to pay attention to changing the push and pop functiong of entry to initialization and clear.
         \item 08/29/2022 \\
             The initialization function of the internal linked list of the hash table has been created and passed the preliminary test (traversing from front to back and from back to front). The next thing to do is to complete the clear function and try to clear all memory leaks.
+        \item 08/30/2022 \\
+            The outline of the clear function is now complete. It may be necessary to change clear (or not) after linkedlist is done.
     \end{itemize}
-\begin{yd}{这是一个约定}{}
-              
-约定的内容.
+\begin{yd}{About memory leak of "linkedlist" in "entry"}{}
+    Although clear can currently deal with the memory leak in the entry, it may not be able to deal with the memory leak in the linkedlist. It's time to consider whether to write a function to clear linkedlist memory leaks in entry or write a function to clear memory leaks in linkedlist's own function (maybe it's better to write in linkedlist's own [according to the way of thinking about Java and C++] ).
 \end{yd}
 
 上述就是一些文本了. 使用的代码是

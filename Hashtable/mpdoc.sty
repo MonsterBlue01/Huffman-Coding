@@ -1,6 +1,4 @@
 \ProvidesPackage{mpdoc}[2021/10/30  v0.1.5]
-%shzaiz
-% 眉首眉脚
 \RequirePackage{fancyhdr}
 % 调色板
 \RequirePackage{xcolor-material}
@@ -22,9 +20,9 @@
 
 %%% CTEX格式设置 %%%
 \ctexset{
-  contentsname={Contents},
-  section/format=\Large\bfseries\centering\color{PrimaryColor},
-  subsection/number={\textcolor{PrimaryColor}{\thesubsection}},
+    contentsname={Contents},
+    section/format=\Large\bfseries\centering\color{PrimaryColor},
+    subsection/number={\textcolor{PrimaryColor}{\thesubsection}},
 }
 
 %%% 链接设置 %%%
@@ -213,8 +211,7 @@ boxed title style={colback=MaterialGrey}
 % 定义
 
 
-% 约定
-\newtcbtheorem[number within=section]{yd}{约定}{
+\newtcbtheorem[number within=section]{yd}{Tips}{
   fonttitle=\heiti,
   boxrule=0.1mm,
   before upper={\parindent2em},
