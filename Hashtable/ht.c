@@ -6,13 +6,17 @@
 entry* initialize() {
     int index = 0;
     entry* e = (entry *)malloc(sizeof(entry));
-    e->index = index++;
+    e->index = index;
+    e->linkedlist = (ll *)malloc(sizeof(ll));
+    e->linkedlist->Oindex = index++;
     entry* tmp = e;
     while (index < 200) {
         while (tmp->down != NULL) {
             tmp = tmp->down;
         }
         tmp->down = (entry *)malloc(sizeof(entry));
+        tmp->down->linkedlist = (ll *)malloc(sizeof(ll));
+        tmp->down->linkedlist->Oindex = index;
         tmp->down->up = tmp;
         tmp->down->index = index++;
     }
@@ -32,15 +36,12 @@ void clean(entry* e) {
 
 int main() {
     entry* e = initialize();
-    // entry* tmp = e;
-    // while (tmp->down != NULL) {
-    //     printf("Index down: %d\n", tmp->index);
-    //     tmp = tmp->down;
-    // }
-    // while (tmp->up != NULL) {
-    //     printf("Index up: %d\n", tmp->index);
-    //     tmp = tmp->up;
-    // }
-
-    clean(e);
+    while (e->down != NULL) {
+        printf("e->index: %d\n", e->index);
+        printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
+        e = e->down;
+    }
+    printf("e->index: %d\n", e->index);
+    printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
+    // clean(e);
 }
