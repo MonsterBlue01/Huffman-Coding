@@ -29,6 +29,7 @@ void clean(entry* e) {
     }
     while (e != NULL) {
         entry* tmp = e;
+        free(tmp->linkedlist);
         free(tmp);
         e = e->down;
     }
@@ -43,5 +44,15 @@ int main() {
     }
     printf("e->index: %d\n", e->index);
     printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
-    // clean(e);
+
+    while (e->up != NULL) {
+        printf("e->index: %d\n", e->index);
+        printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
+        e = e->up;
+    }
+
+    printf("e->index: %d\n", e->index);
+    printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
+    
+    clean(e);
 }

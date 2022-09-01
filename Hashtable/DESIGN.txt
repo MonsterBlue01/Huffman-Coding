@@ -58,11 +58,14 @@ This hash table can hold up to two hundred non-conflicting elements. An external
         \item 08/30/2022 \\
             The outline of the clear function is now complete. It may be necessary to change clear (or not) after linkedlist is done.
     \end{itemize}
-\begin{yd}{About memory leak of "linkedlist" in "entry"}{}
-    Although clear can currently deal with the memory leak in the entry, it may not be able to deal with the memory leak in the linkedlist. It's time to consider whether to write a function to clear linkedlist memory leaks in entry or write a function to clear memory leaks in linkedlist's own function (maybe it's better to write in linkedlist's own [according to the way of thinking about Java and C++] ).
-\end{yd}
+    \begin{yd}{About memory leak of "linkedlist" in "entry"}{}
+        Although clear can currently deal with the memory leak in the entry, it may not be able to deal with the memory leak in the linkedlist. It's time to consider whether to write a function to clear linkedlist memory leaks in entry or write a function to clear memory leaks in linkedlist's own function (maybe it's better to write in linkedlist's own [according to the way of thinking about Java and C++] ).
+    \end{yd}
+    \begin{itemize}
+        \item 09/01/2022 \\
+            The initialization and clear of Entry have been basically completed. Can start linkedlist work.
+    \end{itemize}
 
-上述就是一些文本了. 使用的代码是
 \begin{lstlisting}{language=latex}
 \begin{yd}{这是一个约定}{}
               
