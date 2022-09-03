@@ -8,6 +8,7 @@ entry* initialize() {
     entry* e = (entry *)malloc(sizeof(entry));
     e->index = index;
     e->linkedlist = (ll *)malloc(sizeof(ll));
+    e->linkedlist->content = "\0";
     e->linkedlist->Oindex = index++;
     entry* tmp = e;
     while (index < 200) {
@@ -16,6 +17,7 @@ entry* initialize() {
         }
         tmp->down = (entry *)malloc(sizeof(entry));
         tmp->down->linkedlist = (ll *)malloc(sizeof(ll));
+        tmp->down->linkedlist->content = "\0";
         tmp->down->linkedlist->Oindex = index;
         tmp->down->up = tmp;
         tmp->down->index = index++;
@@ -37,6 +39,9 @@ void clean(entry* e) {
 
 int main() {
     entry* e = initialize();
+    push(e->linkedlist, "apple", e->index);
+    push(e->down->linkedlist, "cat", e->index);
+    push(e->linkedlist, "bear", e->index);
     while (e->down != NULL) {
         printf("e->index: %d\n", e->index);
         printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
@@ -44,7 +49,7 @@ int main() {
     }
     printf("e->index: %d\n", e->index);
     printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
-
+                                                                            // Test cases for entry
     while (e->up != NULL) {
         printf("e->index: %d\n", e->index);
         printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
@@ -53,6 +58,15 @@ int main() {
 
     printf("e->index: %d\n", e->index);
     printf("e->linkedlist->Oindex: %d\n", e->linkedlist->Oindex);
+
+    // printf("Check push: %s (first)\n", e->linkedlist->content);
+    // printf("Check push: %s (second)\n", e->linkedlist->next->content);   // Used to check if push in "linkedlist" works
+    // printf("Check push: %s (last)\n", e->down->linkedlist->content);
+
+    // ll* linkedlist = (ll *)malloc(sizeof(ll));
+    // if ((linkedlist->prev == NULL) && (linkedlist->next == NULL)) {
+    //     printf("It's null.\n");
+    // }
     
     clean(e);
 }

@@ -24,8 +24,6 @@
 \newcommand*{\arcosh}{\mathop{}\!\mathrm{arcosh}}
 \newcommand*{\Li}{\mathop{}\!\textrm{Li}}
 
-
-
 \begin{document}
 \pagenumbering{roman}
 \title{HashTable}
@@ -64,6 +62,8 @@ This hash table can hold up to two hundred non-conflicting elements. An external
     \begin{itemize}
         \item 09/01/2022 \\
             The initialization and clear of Entry have been basically completed. Can start linkedlist work.
+        \item 09/02/2022 \\
+            The push of linkedlist has been done and some simple tests have passed. Ready to work on the pop function of linkedlist.
     \end{itemize}
 
 \begin{lstlisting}{language=latex}
@@ -72,12 +72,6 @@ This hash table can hold up to two hundred non-conflicting elements. An external
 约定的内容.
 \end{yd}
 \end{lstlisting}
-    
-\begin{xt}
-        
-这是一个习题.
-    
-\end{xt}
     
 \begin{lt}
         

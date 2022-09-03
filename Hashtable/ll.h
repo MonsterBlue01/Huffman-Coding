@@ -6,6 +6,6 @@ typedef struct ll {
     int Iindex;
 } ll;
 
-ll* push(ll* li, char* word);
+void push(ll* li, char* word, int num);
 
 char* pop(ll* li);

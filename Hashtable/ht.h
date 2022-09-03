@@ -8,3 +8,5 @@ typedef struct entry {
 } entry;
 
 entry* pushEntry(entry* e);
+
+void clean(entry* e);

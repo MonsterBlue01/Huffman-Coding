@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "ll.h"
 
-ll* push(ll* li, char* word) {
-    if (li == NULL) {
-        li = (ll *)malloc(sizeof(ll));
+void push(ll* li, char* word, int num) {
+    if (strcmp(li->content, "\0") == 0) {
         li->content = word;
+        li->Iindex = 0;
+        li->Oindex = num;
     } else {
         ll* tmp = li;
         while (tmp->next != NULL) {
@@ -14,9 +16,10 @@ ll* push(ll* li, char* word) {
         }
         tmp->next = (ll *)malloc(sizeof(ll));
         tmp->next->prev = tmp;
+        tmp->next->Oindex = tmp->Oindex;
+        tmp->next->Iindex = tmp->Iindex + 1;
         tmp->next->content = word;
     }
-    return li;
 }
 
 char* pop(ll* li) {
