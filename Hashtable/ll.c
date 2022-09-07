@@ -23,15 +23,18 @@ void push(ll* li, char* word, int num) {
 }
 
 char* pop(ll* li) {
-    ll* tmp = li;
-    while (tmp->next != NULL) {
-        tmp = tmp->next;
+    if (li->next == NULL) {
+        char* tmp = li->content;
+        li->content = "\0";
+        return tmp;
+    } else {
+        ll* tmp = li;
+        while (tmp->next->next != NULL) {
+            tmp = tmp->next;
+        }
+        char* tmp2 = tmp->next->content;
+        free(tmp->next);
+        tmp->next = NULL;
+        return tmp2;
     }
-    char* out = tmp->content;
-    if (tmp->prev != NULL) {
-        tmp->prev->next = NULL;
-    }
-    free(tmp);
-    tmp = NULL;
-    return out;
-}
+}   

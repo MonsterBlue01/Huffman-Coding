@@ -40,7 +40,7 @@ void clean(entry* e) {
 int main() {
     entry* e = initialize();
     push(e->linkedlist, "apple", e->index);
-    push(e->down->linkedlist, "cat", e->index);
+    push(e->down->linkedlist, "cat", e->index);                             // Check push
     push(e->linkedlist, "bear", e->index);
     while (e->down != NULL) {
         printf("e->index: %d\n", e->index);
@@ -67,6 +67,11 @@ int main() {
     // if ((linkedlist->prev == NULL) && (linkedlist->next == NULL)) {
     //     printf("It's null.\n");
     // }
+
+    // char* out = pop(e->linkedlist);
+    // printf("First: %s\n", e->linkedlist->content);                       // Used to check pop function
+    // printf("Output: %s\n", out);
+    // printf("Second: %s\n", e->linkedlist->next->content);
     
     clean(e);
 }
