@@ -37,6 +37,53 @@ void clean(entry* e) {
     }
 }
 
+void hash(entry* e, char* word, int num) {
+    int index = 0;
+    for (int i = 0; i < strlen(word); i++) {
+        index += word[i];
+    }
+    index = index % 200;
+    while (e->index != index) {
+        e = e->down;
+    }
+    push(e->linkedlist, word, num);
+}
+
+void delete(entry* e, char* word) {
+    int index = 0;
+    for (int i = 0; i < strlen(word); i++) {
+        index += word[i];
+    }
+    index = index % 200;
+    while (e->index != index) {
+        e = e->down;
+    }
+    ll* tmp = e->linkedlist;
+    while (tmp != NULL) {
+        if (strcmp(tmp->content, word) == 0) {
+            if (tmp->prev == NULL) {
+                if (tmp->next == NULL) {
+                    tmp->content = "\0";
+                } else {
+                    tmp->next->prev = NULL;
+                    e->linkedlist = tmp->next;
+                    free(tmp);
+                }
+            } else {
+                if (tmp->next == NULL) {
+                    tmp->prev->next = NULL;
+                    free(tmp);
+                } else {
+                    tmp->prev->next = tmp->next;
+                    tmp->next->prev = tmp->prev;
+                    free(tmp);
+                }
+            }
+        }
+        tmp = tmp->next;
+    }
+}
+
 int main() {
     entry* e = initialize();
     push(e->linkedlist, "apple", e->index);
