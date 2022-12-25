@@ -50,7 +50,7 @@
 
 \section{Design}
     \subsection{Encoding}
-
+        During the encoding process, the user can provide the text to be compressed through standard input or through a file. The encoding process is the same. First, we first build a frequency table based on the text provided by the user. Then construct the Huffman tree according to the frequency table. After that, we get the characters and their corresponding codes from the Huffman tree. Finally, we use the corresponding code to replace the characters in the text. And after that ask the user if they want to output and save to a file.
     \subsection{Decoding}
-    
+        The input of decoding and encoding is actually similar. Both text and standard input can be accepted. After obtaining the user's input, the first step is to rebuild the corresponding Huffman tree according to the code table. After that, binary numbers (or strings) can be replaced according to characters and corresponding codes. Since the final generated text is already readable (if the original text is not garbled when compressed), it is printed directly on the standard output.
 \end{document}

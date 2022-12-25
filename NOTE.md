@@ -19,4 +19,4 @@ This file contains notes and documentation for the project.
 - Try to put huffman's code table into the file [*Done*]
 - Complete the content in README.md [*Done*]
 - Start writing WRITEUP.tex [*Done*]
-- Complete the part about Encoding and Decoding design in the LaTeX document (since the introduction of function has been mentioned in the function part, try to focus on the whole rather than these modules, such as explaining the main function)
+- Complete the part about Encoding and Decoding design in the LaTeX document (since the introduction of function has been mentioned in the function part, try to focus on the whole rather than these modules, such as explaining the main function) [*Done*]

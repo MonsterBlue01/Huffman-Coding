@@ -30,3 +30,7 @@ Version 1.0.0.4 (2022-12-22)
 - Edited main function (Previously only binary code was put into the file. Now the binary code and code table can be put into the file together.)
 - Added LICENSE
 - The functions other than the main function have been cut into another separate .py file
+
+Version 1.0.0.5 (2022-12-25)
+--------------------------
+- Decoding is now possible via file input.
